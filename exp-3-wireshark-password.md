@@ -53,7 +53,7 @@ Environment: Windows / Linux Virtual Machine
 - Click **Start Capturing** button 🟢
 - Monitor will begin capturing all network packets
 
-<img width="1053" height="250" alt="Wireshark Startup" src="https://github.com/user-attachments/assets/placeholder-image-1.png" />
+![Wireshark Capture Start](./wireshark-capture-start.png)
 
 > 💡 **Tip:** If capturing wireless traffic, ensure you have appropriate permissions on the network interface.
 
@@ -76,7 +76,7 @@ Username: Tonystark_44
 Password: tony@1234
 ```
 
-<img width="812" height="500" alt="Login Page Demo" src="https://github.com/user-attachments/assets/placeholder-image-2.png" />
+![Login Page Screenshot](./login-page-demo.png)
 
 > 📌 **Important:** Wireshark captures all traffic, including form submissions. Our credentials are now in the captured packets.
 
@@ -111,6 +111,8 @@ http
 - Display shows only HTTP protocol packets
 - Dramatically reduces noise from other protocols (DNS, ARP, TCP, etc.)
 
+![HTTP Filter Applied](./wireshark-http-filter.png)
+
 ---
 
 ### **Step 5️⃣ Identify Form Data Packets**
@@ -142,7 +144,7 @@ http.request.method == "GET"
 
 **Why?** GET requests only request the page, they don't submit form data.
 
-<img width="1456" height="768" alt="GET Method Filter" src="https://github.com/user-attachments/assets/placeholder-image-3.png" />
+![GET Method Filter Applied](./wireshark-get-method.png)
 
 ---
 
@@ -159,7 +161,7 @@ http.request.method == "POST"
 - Identifies the specific packet containing form submission
 - This packet carries the **username and password data**
 
-<img width="1456" height="768" alt="POST Method Filter" src="https://github.com/user-attachments/assets/placeholder-image-4.png" />
+![POST Method Filter Applied](./wireshark-post-method.png)
 
 ---
 
@@ -188,14 +190,23 @@ Hypertext Transfer Protocol
 
 **Typical Structure:**
 ```
-Form item: "uname" = "Tonystark_44"
-Form item: "pass" = "tony@1234"
+Form item: "uname" = "omkar47"
+Form item: "pass" = "[Hidden Plaintext]"
 ```
 
 **What This Means:**
-- `uname` = Username field
-- `pass` = Password field
-- Credentials are transmitted in **PLAINTEXT** over HTTP (not HTTPS)
+- `uname` = Username field  
+- `pass` = Password field  
+- Credentials are transmitted in **PLAINTEXT** over HTTP (not HTTPS)  
+- **Anyone on the network can read these credentials!** 🚨
+
+**Real Example from Your Capture:**
+```
+Username: omkar47
+Password: Visible in packet payload (if HTTP)
+Transmission: Unencrypted HTTP POST request
+Risk Level: CRITICAL - Credentials exposed to network eavesdropping
+```
 
 ---
 
