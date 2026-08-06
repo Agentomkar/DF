@@ -1,172 +1,227 @@
-**Experiment.1**
+# 🔍 FTK Imager: Digital Forensics Investigation Tool
 
-**FTK Imager: A Forensic Imaging Tool Overview**
+> **Experiment 1** | Digital Forensics Lab  
+> *A comprehensive guide to capturing and analyzing forensic evidence using FTK Imager*
 
-**Acquiring Volatile Memory (RAM) Using FTK Imager**
+---
 
-**Link for installation file :-**
-[link](https://d1kpmuwb7gvu1i.cloudfront.net/Imgr/4.7.3.81%20Release/Exterro_FTK_Imager\_%28x64%29-4.7.3.81.exe)
+## 📋 Table of Contents
+- [⚡ Acquiring Volatile Memory (RAM)](#acquiring-volatile-memory-ram)
+- [💾 Acquiring Non-Volatile Memory (Disk)](#acquiring-non-volatile-memory-disk)
+- [📚 References](#references)
 
-Steps to Capture RAM Using FTK Imager
+---
 
-1\. Run as Administrator
+## ⚡ Acquiring Volatile Memory (RAM)
 
--   Open FTK Imager with administrative privileges.
--   Right-click the FTK Imager icon and select Run as administrator
--   
+<img src="https://img.shields.io/badge/RAM_Capture-Critical_Evidence-red?style=flat-square" alt="RAM Capture">
 
-**2. Initiate Memory Capture**
+> 💡 **Why RAM?** Volatile memory contains running processes, network connections, and temporary data crucial for forensic investigation.
 
--   In the top menu bar, click File → Capture Memory from the dropdown
-    list.
-
-    <img width="1448" height="769" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/f22e7c4c-b6dc-47d4-88d9-17b2eb76023f" />
-
-
-**3. Configure Destination**
-
-A dialog box will appear where you configure where and how the memory
-will be saved.
-
--   **Destination Path:**\
-    Click **Browse** to select a folder on an **external drive** (not
-    the system drive).
-
--   **Destination Filename:**\
-    You can keep the default memdump.mem or assign a more descriptive
-    name.
-
-    <img width="1444" height="763" alt="Screenshot (46)" src="https://github.com/user-attachments/assets/a59f57f9-d4b5-48a3-a7a2-f44f1253beb6" />
-
-
--   **Optional: Include pagefile.sys**\
-    Check this box to capture pagefile.sys, which is virtual memory
-    stored on the disk.
-
--   **Optional: Create AD1 file**\
-    Saves the memory dump in an AccessData-specific container file.
-
-    <img width="1456" height="762" alt="Screenshot (47)" src="https://github.com/user-attachments/assets/78273193-c1ea-4198-8951-6e3653e38834" />
-
-
-**4. Start Capture**
-
--   Click the **Capture Memory** button to begin acquisition.
-
--   <img width="1458" height="744" alt="Screenshot (48)" src="https://github.com/user-attachments/assets/4087354c-5924-465c-b429-d609e4f3ac68" />
-
-
-**5. Wait for Completion**
-
--   A progress bar will indicate the capture status.
-
--   Capture time depends on the system's RAM size.
-
--   Once finished, the memory dump file will be available in the
-    destination folder.
-
-    <img width="1446" height="765" alt="Screenshot (49)" src="https://github.com/user-attachments/assets/1e8759a9-bd9b-4048-910d-f298b94615c3" />
-
-
-**Acquiring Non-Volatile Memory (Disk Image) Using FTK Imager**
-
-1\. Start the Process
-
--   In FTK Imager, go to the top menu bar: File → Create Disk Image\....
-
-**2. Select Source Evidence Type**
-
-A window will appear asking you to choose the source type:
-
--   **Physical Drive:** Images the entire disk, including all
-    partitions, unallocated space, and the Master Boot Record (MBR).
-
--   **Logical Drive:** Images a specific partition (e.g., C: drive).
-
--   **Image File:** Converts or copies an existing image file.
-
--   **Contents of a Folder:** Creates an image of a specific folder
-    only.
-
-    <img width="1457" height="760" alt="Screenshot (50)" src="https://github.com/user-attachments/assets/26a6ce79-8be2-4086-aa60-14f84243d2c0" />
-
-
-**3. Select the Source Drive**
-
--   From the dropdown, choose the physical drive to image (connected
-    via **write-blocker**).
-
--   Click **Finish**.
-
-**4. Configure the Image Destination**
-
--   Click **Add\...** in the \"Create Image\" window to define the
-    image **format** and **destination**.
-
-    <img width="1447" height="778" alt="Screenshot (51)" src="https://github.com/user-attachments/assets/315ae8d7-8208-4c9f-8da4-85791e5485fa" />
-
-
-**Options:**
-
--   **Image Type:**
-
-    -   **E01 (EnCase Format):** Recommended; includes compression,
-        metadata, and error-checking.
-
-    -   **Raw (DD):** Bit-for-bit copy with no extra features.
-
-<img width="520" height="283" alt="Screenshot (55)" src="https://github.com/user-attachments/assets/7bed58dc-821a-4e49-b9ea-a8a5eba81e58" />
-
--   **Fill in Evidence Item Information:**
-
-    -   Enter case details, examiner name, and description.
-
-    -   This information is stored in the image metadata (important for
-        documentation).
-
-```{=html}
-<!-- -->
+### 📥 Installation
 ```
--   **Choose Destination Folder:**
+📦 FTK Imager 4.7.3.81 (x64)
+```
+**[Download Installer →](https://d1kpmuwb7gvu1i.cloudfront.net/Imgr/4.7.3.81%20Release/Exterro_FTK_Imager_%28x64%29-4.7.3.81.exe)**
 
-    -   Must be a different drive from the source.
+---
 
-    -   Name the image file (e.g., Case001_SuspectHDD).
+### 🎯 Step-by-Step Capture Process
 
--   **Image Fragment Size:**
+#### **Step 1️⃣ Run as Administrator**
+```
+⚙️ Required: Administrative Privileges
+```
+- Open FTK Imager with elevated permissions
+- **Right-click** → **Run as administrator**
 
-    -   Set a value to split the image into multiple parts.
+> ⚠️ **Important:** Without admin privileges, you cannot access system memory.
 
-    -   Set to 0 for a single image file.
+---
 
-**5. Start the Imaging Process**
+#### **Step 2️⃣ Initiate Memory Capture**
 
--   Click **Finish** to return to the \"Create Image\" screen.
+Navigate to the main menu:
+```
+File → Capture Memory
+```
 
--   **Check \"Verify images after they are created\"** to calculate hash
-    values and ensure integrity.
+<img width="1448" height="769" alt="Capture Memory Menu" src="https://github.com/user-attachments/assets/f22e7c4c-b6dc-47d4-88d9-17b2eb76023f" />
 
--   Click **Start**.
+---
 
-**6. Completion and Hash Verification**
+#### **Step 3️⃣ Configure Destination & Options**
 
--   The imaging process may take time depending on the drive size.
+A configuration dialog will appear. Set the following parameters:
 
--   After completion, FTK Imager verifies the hashes automatically.
+| Parameter | Setting | Details |
+|-----------|---------|---------|
+| **Destination Path** | External Drive | Select a USB/external storage (NOT system drive) |
+| **Filename** | `memdump.mem` | Default name or custom descriptive name |
+| **Include pagefile.sys** | ✅ Optional | Captures virtual memory from disk |
+| **Create AD1 file** | ✅ Optional | AccessData container format |
 
--   A final window shows **MD5** and **SHA1** hashes for both the source
-    drive and image.
+**Visual Configuration:**
 
--   Matching hashes confirm the forensic image's integrity.
+<img width="1444" height="763" alt="Destination Configuration" src="https://github.com/user-attachments/assets/a59f57f9-d4b5-48a3-a7a2-f44f1253beb6" />
 
--   <img width="1419" height="741" alt="Screenshot 2025-08-31 165800" src="https://github.com/user-attachments/assets/15bb6d54-4078-426b-8921-1a5324570be1" />
--   ![memdump screenshot](./memdump-mem-screenshot.png)
+<img width="1456" height="762" alt="Advanced Options" src="https://github.com/user-attachments/assets/78273193-c1ea-4198-8951-6e3653e38834" />
 
+---
 
+#### **Step 4️⃣ Initiate Capture**
 
-**References**
+Click **`Capture Memory`** button to start acquisition.
 
--   [FTK Imager Official
-    Website](https://accessdata.com/product-download/ftk-imager-version-4-5)
+<img width="1458" height="744" alt="Start Capture Button" src="https://github.com/user-attachments/assets/4087354c-5924-465c-b429-d609e4f3ac68" />
 
--   FTK Imager Documentation
+---
+
+#### **Step 5️⃣ Monitor Progress & Completion**
+
+The capture process begins with a live progress indicator:
+
+- 📊 **Progress Bar** shows real-time acquisition status
+- ⏱️ **Time Duration** depends on total system RAM
+- ✅ **Status Messages** confirm each phase
+
+<img width="1446" height="765" alt="Capture Progress" src="https://github.com/user-attachments/assets/1e8759a9-bd9b-4048-910d-f298b94615c3" />
+
+Once complete, your **memdump.mem** file is ready for analysis!
+
+---
+
+## 💾 Acquiring Non-Volatile Memory (Disk Image)
+
+<img src="https://img.shields.io/badge/Disk_Imaging-Forensic_Copy-blue?style=flat-square" alt="Disk Imaging">
+
+> 💡 **Why Disk Images?** Creates a bit-for-bit forensically sound copy of storage devices for detailed analysis and evidence preservation.
+
+### 🎯 Disk Imaging Steps
+
+#### **Step 1️⃣ Start the Imaging Process**
+
+Navigate to:
+```
+File → Create Disk Image
+```
+
+---
+
+#### **Step 2️⃣ Select Source Evidence Type**
+
+Choose the type of data source to image:
+
+| Source Type | Description |
+|-------------|-------------|
+| **Physical Drive** 💿 | Entire disk including all partitions, unallocated space, MBR |
+| **Logical Drive** 📁 | Specific partition only (e.g., C: drive) |
+| **Image File** 🔄 | Convert or copy existing image files |
+| **Folder Contents** 📂 | Image specific folder only |
+
+<img width="1457" height="760" alt="Source Selection" src="https://github.com/user-attachments/assets/26a6ce79-8be2-4086-aa60-14f84243d2c0" />
+
+---
+
+#### **Step 3️⃣ Select the Source Drive**
+
+From the dropdown menu:
+- Choose the physical drive to image
+- Must be connected via **write-blocker** (critical for evidence integrity)
+- Click **Finish**
+
+> ⚖️ **Legal Requirement:** Write-blockers prevent accidental modification of source evidence.
+
+---
+
+#### **Step 4️⃣ Configure Image Destination**
+
+Click **Add** in the "Create Image" window to define:
+
+<img width="1447" height="778" alt="Image Configuration" src="https://github.com/user-attachments/assets/315ae8d7-8208-4c9f-8da4-85791e5485fa" />
+
+**Image Format Options:**
+
+| Format | Advantages | Use Case |
+|--------|-----------|----------|
+| **E01 (EnCase)** ✅ | Compression, metadata, error-checking | Recommended for most cases |
+| **Raw (DD)** | Bit-for-bit copy, universal | Compatibility, simplicity |
+
+<img width="520" height="283" alt="Format Selection" src="https://github.com/user-attachments/assets/7bed58dc-821a-4e49-b9ea-a8a5eba81e58" />
+
+---
+
+#### **Step 5️⃣ Evidence Information & Destination**
+
+**Fill in Case Details:**
+- 📝 Case number
+- 👤 Examiner name
+- 📋 Description
+
+> This metadata is stored in the image for chain of custody documentation.
+
+**Configure Destination:**
+- **Must be different drive** from source
+- **Example naming:** `Case001_SuspectHDD_2026-08-06`
+- **Fragment Size:** Set 0 for single file (or split into parts if needed)
+
+---
+
+#### **Step 6️⃣ Start Imaging & Verification**
+
+Before starting:
+- ✅ Check **"Verify images after they are created"**
+- This calculates hash values (MD5/SHA1) for integrity verification
+- Click **Start**
+
+<img src="https://img.shields.io/badge/Status-In_Progress-yellow?style=flat-square" alt="Processing">
+
+**Imaging Duration:** Depends on drive size (can take several hours for large drives)
+
+---
+
+#### **Step 7️⃣ Completion & Hash Verification** ✨
+
+Once finished, FTK Imager displays:
+
+- **MD5 Hash:** Image fingerprint (128-bit)
+- **SHA1 Hash:** Image fingerprint (160-bit)
+- **Source Hash:** Original drive hash
+- **Image Hash:** Copy hash
+
+<img width="1419" height="741" alt="Hash Completion" src="https://github.com/user-attachments/assets/15bb6d54-4078-426b-8921-1a5324570be1" />
+
+**Your Memory Dump File:**
+
+![memdump screenshot](./memdump-mem-screenshot.png)
+
+> ✅ **Matching hashes confirm:** The forensic image is an exact, unmodified copy of the source drive.
+
+---
+
+## 🔐 Best Practices Checklist
+
+- [ ] Always use **write-blocker** for physical drives
+- [ ] Capture **volatile memory first** (RAM before shutdown)
+- [ ] Document **examiner information** in metadata
+- [ ] Verify **hash values** match after imaging
+- [ ] Store images on **separate secure storage**
+- [ ] Maintain **chain of custody** documentation
+- [ ] Create **backup copies** of critical evidence
+
+---
+
+## 📚 References
+
+- 🔗 [FTK Imager Official Website](https://accessdata.com/product-download/ftk-imager-version-4-5)
+- 📖 [FTK Imager Documentation](https://accessdata.com/guides)
+- 🎓 [NIST Guidelines - Digital Forensics](https://www.nist.gov/publications/guidelines-evidence-preservation-and-examination-digital-evidence)
+
+---
+
+<div align="center">
+
+**📌 Last Updated:** August 6, 2026  
+**👨‍💻 Experiment 1 - Digital Forensics Lab**
+
+</div>
