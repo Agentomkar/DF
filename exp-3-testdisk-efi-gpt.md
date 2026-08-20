@@ -92,6 +92,8 @@ Use arrow keys to select, then press Enter key:
  [ No Log ]  Don't record anything
 ```
 
+![TestDisk Log Creation](Screenshot_2026-08-13_204830.png)
+
 ### 📝 Log File Selection Guide
 
 | Option | Purpose | When to Use |
@@ -135,6 +137,8 @@ Disk capacity must be correctly detected for a successful recovery.
 If a disk listed above has an incorrect size, check HD jumper settings and BIOS
 detection, and install the latest OS patches and disk drivers.
 ```
+
+![Disk Selection - Crucial SSD 250GB](Screenshot_2026-08-13_204848.png)
 
 ### 🎯 Step-by-Step Selection
 
@@ -199,6 +203,8 @@ Note: Do NOT select 'None' for media with only a single partition. It's very
 rare for a disk to be 'Non-partitioned'.
 ```
 
+![Partition Table Type Selection - EFI GPT Detected](Screenshot_2026-08-13_204905.png)
+
 ### 📊 Partition Table Types Reference
 
 | Type | Firmware | Filesystems | Max Disk Size | Era |
@@ -252,6 +258,8 @@ Note: Correct disk geometry is required for a successful recovery. 'Analyse'
 process may give some warnings if it thinks the logical geometry is mismatched.
 ```
 
+![TestDisk Main Analysis Menu](Screenshot_2026-08-13_204921.png)
+
 ### 📋 Menu Options Explained
 
 | Option | Purpose | When to Use |
@@ -284,6 +292,8 @@ No partition is bootable
 *=Primary bootable  P=Primary  L=Logical  E=Extended  D=Deleted
 >[Quick Search]  [ Backup ]          Try to locate partition
 ```
+
+![Partition Structure Analysis - Bad Sectors Detected](Screenshot_2026-08-13_204937.png)
 
 ### 🔍 Analysis Interpretation
 
@@ -323,6 +333,8 @@ The following partition can't be recovered:
 NTFS, blocksize=4096, 249 GB / 232 GiB
 ```
 
+![Quick Search - Disk Size Mismatch Warning](Screenshot_2026-08-13_204952.png)
+
 **⚠️ Size Mismatch Warning:**
 - Detected disk size appears smaller than expected
 - **Cause:** Could be BIOS limitation, HD jumper issue, or firmware problem
@@ -354,6 +366,8 @@ Keys A: add partition, L: load backup, T: change type, P: list files,
     Enter: to continue
 FAT32, blocksize=1024, 104 MB / 100 MiB
 ```
+
+![Quick Search Results - FAT32 EFI & NTFS Partitions Found](Screenshot_2026-08-13_205012.png)
 
 ### 📋 Partition Recovery Summary
 
@@ -519,6 +533,8 @@ You will have to reboot for the change to take effect.
 
 >[ Ok ]
 ```
+
+![Final Reboot Notification](Screenshot_2026-08-13_205025.png)
 
 > ℹ️ **Important:** The partition table changes only take effect after a system restart. The OS and firmware need to reload the partition information.
 
