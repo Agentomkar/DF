@@ -1,6 +1,6 @@
 # 🔧 TestDisk 7.3-WIP: EFI GPT Partition Recovery
 
-> **Experiment 3** | Digital Forensics Lab  
+> **Experiment 2** | Digital Forensics Lab  
 > *Master step-by-step EFI GPT partition recovery and restore corrupted filesystems using TestDisk 7.3-WIP on modern UEFI systems*
 
 ---
