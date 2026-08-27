@@ -38,7 +38,7 @@ Email headers contain critical metadata about an email's journey from sender to 
 2. Click **⋯** (More) in the upper right corner
 3. Select **"Show original"**
 
-![Gmail Header Access](./images/fig-000.png)
+![Gmail Header Access](./experiments/ex4/images/fig-000.png)
 
 ---
 
@@ -49,7 +49,7 @@ Email headers contain critical metadata about an email's journey from sender to 
 3. Find the **"Internet headers"** box
 4. Copy all text
 
-![Outlook Header Access](./images/fig-001.png)
+![Outlook Header Access](./experiments/ex4/images/fig-001.png)
 
 ---
 
@@ -59,7 +59,7 @@ Email headers contain critical metadata about an email's journey from sender to 
 2. Click **⋯** (More)
 3. Select **"View raw message"**
 
-![Yahoo Raw Message](./images/fig-002.png)
+![Yahoo Raw Message](./experiments/ex4/images/fig-002.png)
 
 ---
 
@@ -80,7 +80,7 @@ Once you access the header, identify these critical fields:
 
 ### Example Header Analysis
 
-![Header Fields Example](./images/fig-003.png)
+![Header Fields Example](./experiments/ex4/images/fig-003.png)
 
 ---
 
@@ -106,7 +106,7 @@ Received: from sender.mail.com (IP: 203.0.113.45)
 - ⚠️ Single hop (no intermediate servers = suspicious)
 - ⚠️ Mismatched IPs (doesn't correspond to mail servers)
 
-![Received Field Analysis](./images/fig-004.png)
+![Received Field Analysis](./experiments/ex4/images/fig-004.png)
 
 ---
 
@@ -135,7 +135,7 @@ Received: from sender.mail.com (IP: 203.0.113.45)
 | **FAIL** ❌ | Signature invalid or missing | Content may be tampered |
 | **NEUTRAL** ❓ | No signature present | Check SPF/DMARC |
 
-![DKIM Verification](./images/fig-005.png)
+![DKIM Verification](./experiments/ex4/images/fig-005.png)
 
 ---
 
@@ -172,7 +172,7 @@ Return-Path: support@suspicious-site.ru  ← MISMATCH!
 
 Use WHOIS lookup to verify IP ownership:
 
-![IP Lookup Analysis](./images/fig-006.png)
+![IP Lookup Analysis](./experiments/ex4/images/fig-006.png)
 
 **Warning Signs:**
 - ⚠️ IP from unexpected country
@@ -203,7 +203,7 @@ Received: from mail3.com at 19:00:00  ← 3.5 hour gap?
 - IP reputation lookup
 - Trace server chain
 
-![MXToolbox Analysis](./images/fig-007.png)
+![MXToolbox Analysis](./experiments/ex4/images/fig-007.png)
 
 ---
 
@@ -225,7 +225,7 @@ Received: from mail3.com at 19:00:00  ← 3.5 hour gap?
 - Community reports
 - Blacklist status
 
-![IP Reputation Check](./images/fig-008.png)
+![IP Reputation Check](./experiments/ex4/images/fig-008.png)
 
 ---
 

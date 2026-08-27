@@ -58,7 +58,7 @@ Autopsy is an open-source digital forensics platform that:
 
 Open Autopsy 4.21.0 - you'll see the Welcome dialog:
 
-![Autopsy Welcome Window](./images/fig-000.png)
+![Autopsy Welcome Window](./experiments/ex5/images/fig-000.png)
 
 ---
 
@@ -74,7 +74,7 @@ Case Type:      Single-User
 Base Directory: D:\3\1\Digital Forensics\EXP-5
 ```
 
-![New Case Information Window](./images/fig-001.png)
+![New Case Information Window](./experiments/ex5/images/fig-001.png)
 
 ---
 
@@ -102,7 +102,7 @@ From the "Add Data Source" dialog, choose:
 Disk Image or VM File
 ```
 
-![Data Source Type Selection](./images/fig-002.png)
+![Data Source Type Selection](./experiments/ex5/images/fig-002.png)
 
 ---
 
@@ -119,7 +119,7 @@ Set the following parameters:
 
 > 📌 **Important:** E01 file is the first segment. E02 must be in the same directory.
 
-![Evidence Source Configuration](./images/fig-003.png)
+![Evidence Source Configuration](./experiments/ex5/images/fig-003.png)
 
 ---
 
@@ -142,7 +142,7 @@ This split image will be processed as a single logical unit.
 
 Select modules to automatically process the evidence:
 
-![Ingest Module Configuration](./images/fig-004.png)
+![Ingest Module Configuration](./experiments/ex5/images/fig-004.png)
 
 ---
 
@@ -175,7 +175,7 @@ Click **Add Data Source** to begin:
 2. ✅ Files indexed and analyzed
 3. ✅ Progress panel displays real-time status
 
-![Ingest Processing Progress](./images/fig-005.png)
+![Ingest Processing Progress](./experiments/ex5/images/fig-005.png)
 
 ---
 
@@ -200,7 +200,7 @@ During analysis, Autopsy:
 
 After processing completes, browse the results:
 
-![Autopsy File Views](./images/fig-006.png)
+![Autopsy File Views](./experiments/ex5/images/fig-006.png)
 
 ---
 
@@ -225,7 +225,7 @@ After processing completes, browse the results:
 
 Select a file to view complete metadata:
 
-![File Metadata and Preview](./images/fig-007.png)
+![File Metadata and Preview](./experiments/ex5/images/fig-007.png)
 
 ---
 
@@ -259,7 +259,7 @@ Images are displayed in the preview pane with full metadata.
 
 Click **Generate Report** from the menu:
 
-![Report Save Dialog](./images/fig-008.png)
+![Report Save Dialog](./experiments/ex5/images/fig-008.png)
 
 ---
 
@@ -269,7 +269,7 @@ Click **Generate Report** from the menu:
 
 Choose which analysis modules to include:
 
-![Report Module Selection](./images/fig-009.png)
+![Report Module Selection](./experiments/ex5/images/fig-009.png)
 
 **Available Modules:**
 - ✅ Interesting Files Identifier
@@ -297,7 +297,7 @@ Format Options:
 
 ### Report Generation Progress
 
-![Report Generation Status](./images/fig-010.png)
+![Report Generation Status](./experiments/ex5/images/fig-010.png)
 
 Status updates show:
 - Files analyzed
@@ -312,7 +312,7 @@ Status updates show:
 
 Once complete, view your forensic report:
 
-![Generated Report Preview](./images/fig-011.png)
+![Generated Report Preview](./experiments/ex5/images/fig-011.png)
 
 ---
 
@@ -331,7 +331,7 @@ The HTML/PDF report includes:
 | **Analysis Results** | Keyword matches, encryption detection |
 | **Timeline** | Events in chronological order |
 
-![Full Report Display](./images/fig-012.png)
+![Full Report Display](./experiments/ex5/images/fig-012.png)
 
 ---
 
