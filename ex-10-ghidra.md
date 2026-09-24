@@ -58,12 +58,18 @@ java -version
 openjdk version "11.0.x"
 ```
 
+<img width="900" alt="Java Version Verification" src="./screenshots/Screenshot_2026-09-24_065646.png" />
+
 ### Download & Install Ghidra
 
 1. Visit [NSA Ghidra GitHub](https://github.com/NationalSecurityAgency/ghidra)
 2. Download latest release
 3. Extract to suitable directory
 4. Launch: `ghidraRun` (Linux/macOS) or `ghidraRun.bat` (Windows)
+
+**Extracted Ghidra Directory Structure:**
+
+<img width="1000" alt="Ghidra Installation Directory" src="./screenshots/Screenshot_2026-09-24_065602.png" />
 
 ---
 
@@ -114,6 +120,10 @@ Ghidra-Projects/
 - Raw binary files
 - Hex dumps
 
+**Binary Import Dialog:**
+
+<img width="900" alt="Binary Import Configuration" src="./screenshots/Screenshot_2026-09-24_065438.png" />
+
 ### Step 2️⃣ Start Code Browser
 
 1. Double-click imported program
@@ -135,7 +145,9 @@ Ghidra-Projects/
 - Progress bar shows completion status
 - Status messages indicate phases
 
-**Output screenshots go here:**
+**CodeBrowser with Function Graph Analysis:**
+
+<img width="1200" alt="Ghidra CodeBrowser Main Analysis Window" src="./screenshots/Screenshot_2026-09-24_065244.png" />
 
 ---
 
@@ -249,6 +261,10 @@ POST /
 1. Select function in Symbol Tree
 2. **Decompiler window** automatically updates
 3. Shows C-like pseudocode representation
+
+**Assembly & Decompiler Side-by-Side View:**
+
+<img width="1200" alt="Assembly Code with Decompiler Output" src="./screenshots/Screenshot_2026-09-24_065544.png" />
 
 **Decompiler Benefits:**
 - Higher-level understanding
@@ -407,18 +423,17 @@ for f in currentProgram.getFunctionManager().getFunctions(True):
 
 ---
 
-## 🖼️ Output Screenshots
+## 🖼️ Analysis Workflow Summary
 
-**Screenshots to be added:**
-- Ghidra project creation
-- Binary import dialog
-- CodeBrowser with assembly
-- Decompiler window
-- Symbol tree view
-- String analysis results
-- Import analysis
-- Control flow graph
-- Analysis completion
+✅ **Complete workflow demonstrated:**
+1. Java environment verification
+2. Ghidra installation & setup
+3. Binary import with format detection
+4. CodeBrowser main analysis window
+5. Assembly code with Function Graph
+6. Decompiler output with variable analysis
+7. Symbol Tree function navigation
+8. Cross-reference analysis
 
 ---
 
