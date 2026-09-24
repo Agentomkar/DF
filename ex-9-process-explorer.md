@@ -47,6 +47,8 @@
    - **64-bit:** `procexp64.exe`
    - **32-bit:** `procexp.exe`
 
+<img width="800" alt="Process Explorer Extracted Files" src="./screenshots/Screenshot_2026-09-24_062055.png" />
+
 ---
 
 ## 🎨 Understanding Process Colors
@@ -99,6 +101,10 @@ svchost.exe (Service)
 └── network.exe (unknown process)
 ```
 
+**Process Explorer Main Interface:**
+
+<img width="1000" alt="Process Explorer Process List" src="./screenshots/655060310-33c3a0f4-419f-4137-8224-b6cbe14d9558.png" />
+
 ### Step 2️⃣ Check Process Properties
 
 Right-click process → **Properties** → Examine:
@@ -109,6 +115,22 @@ Right-click process → **Properties** → Examine:
 | **Image** | File path, **Digital signature** |
 | **TCP/IP** | Network connections |
 | **Memory** | Resource usage details |
+
+**Properties Dialog with Digital Signature Verification:**
+
+<img width="900" alt="Process Properties - Signature Verification" src="./screenshots/655060333-8abfbcd3-7f24-49c3-8c96-4be219a5fe71.png" />
+
+### Step 3️⃣ Monitor Network Activity
+
+Open **TCP/IP tab** in process properties to check network connections:
+
+<img width="900" alt="TCP/IP Network Connections" src="./screenshots/655060365-6a0270ad-bd52-4308-91a9-57e01e0ddbd8.png" />
+
+**What to look for:**
+- Unexpected external connections
+- Unknown remote addresses
+- Suspicious ports (non-standard: 8080, 5555, 6666, etc.)
+- Connections to private IP ranges (unusual for legitimate apps)
 
 ---
 
@@ -182,6 +204,17 @@ Right-click → Kill Process
 Terminates the process immediately.
 
 > ⚠️ **Warning:** Some malware prevents deletion or restarts automatically.
+
+### Run Full System Scan
+
+After terminating suspicious processes, perform a complete antivirus scan:
+
+<img width="1000" alt="Windows Security Center - Virus Protection" src="./screenshots/Screenshot_2026-09-24_062005.png" />
+
+**Scan Options:**
+- **Quick scan:** Fast check of critical areas (recommended first)
+- **Full scan:** Complete system analysis (takes 30+ minutes)
+- **Custom scan:** Scan specific folders or drives
 
 ### Examine Source File
 
