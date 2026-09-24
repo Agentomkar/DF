@@ -29,6 +29,14 @@
    - Add to system PATH
    - Verify: Open CMD → `tsk_version`
 
+**Sleuth Kit Binaries Directory:**
+
+<img width="1100" alt="Sleuth Kit Installation Files" src="./screenshots/Screenshot_2026-09-23_213437.png" />
+
+**Available Sleuth Kit Tools:**
+
+<img width="1100" alt="Complete Tool Set" src="./screenshots/Screenshot_2026-09-23_213538.png" />
+
 ---
 
 ## 📊 File System Analysis
@@ -39,11 +47,19 @@
 fsstat [image_file] > filesystem_info.txt
 ```
 
+**Sleuth Kit Commands Execution:**
+
+<img width="1100" alt="Command Prompt with TSK Commands" src="./screenshots/Screenshot_2026-09-23_214607.png" />
+
 **Output includes:**
 - File system type (NTFS, FAT32, ext4, etc.)
 - Block size & total blocks
 - Inode information
 - Journal details
+
+**Filesystem Information Output:**
+
+<img width="1000" alt="NTFS Filesystem Analysis" src="./screenshots/Screenshot_2026-09-23_213949.png" />
 
 ---
 
@@ -52,6 +68,10 @@ fsstat [image_file] > filesystem_info.txt
 ```bash
 mmls [image_file] > partitions.txt
 ```
+
+**Partition Table Analysis:**
+
+<img width="1000" alt="DOS Partition Table Output" src="./screenshots/Screenshot_2026-09-23_214035.png" />
 
 **Displays:**
 - Partition table structure
@@ -65,6 +85,10 @@ mmls [image_file] > partitions.txt
 ```bash
 fls -r [image_file] > file_list.txt
 ```
+
+**Complete File System Listing:**
+
+<img width="1100" alt="Recursive File Directory Structure" src="./screenshots/Screenshot_2026-09-23_214125.png" />
 
 **Output contains:**
 - Complete directory structure
@@ -88,6 +112,10 @@ fls -r [image_file] > file_list.txt
 icat [image_file] [inode_number] > recovered_file.dat
 ```
 
+**Recovered File Content:**
+
+<img width="1100" alt="Recovered File Binary Data" src="./screenshots/Screenshot_2026-09-23_214204.png" />
+
 **Process:**
 1. Find inode in `file_list.txt`
 2. Use `icat` to extract file content
@@ -106,6 +134,10 @@ icat disk.E01 1234 > recovered_document.doc
 ```bash
 istat [image_file] [inode_number] > metadata_info.txt
 ```
+
+**File Metadata Analysis:**
+
+<img width="1100" alt="MFT Entry and File Attributes" src="./screenshots/Screenshot_2026-09-23_214233.png" />
 
 **Metadata includes:**
 - File size & allocated status
