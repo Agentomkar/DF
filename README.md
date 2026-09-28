@@ -633,7 +633,10 @@ Potential extensions to the laboratory include:
 - Automated forensic reporting
 
 ---
+#Mentor 
 
+**DR. K. VENKATESH**
+K. Venkatesh, “Unravelling Digital Crime Scenes: Pedagogical Strategies in Digital Forensics PBL,” Journal of Engineering Education Transformations, vol. 38, Special Issue 1, pp. 146–152, 2024, doi: 10.16920/jeet/2024/v38is1/24224.
 # Author
 
 **Omkar Busa**
